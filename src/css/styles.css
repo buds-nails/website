@@ -1,0 +1,25 @@
+/* ========================================
+   BUDS NAILS — CSS
+   Colours: Blush pink, Warm rose, Mauve
+======================================== */
+
+:root {
+  --blush: #F5E6E0;
+  --rose: #D4A0A0;
+  --mauve: #8B6F6F;
+  --cream: #FFF9F7;
+  --charcoal: #3D3535;
+  --gold: #C9A96E;
+  --white: #ffffff;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(139, 111, 111, 0.12);
+  --transition: all 0.3s ease;
+}
+
+/* TODO: VS Code — fill out full styles based on the brief in WEBSITE-BRIEF.md */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--charcoal); background: var(--cream); }
