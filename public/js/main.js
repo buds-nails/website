@@ -160,6 +160,23 @@
     if (e.key === 'ArrowRight') navigate(1);
   });
 
+  // --- Lightbox touch swipe (mobile) ---
+  var touchStartX = 0;
+  var touchEndX = 0;
+
+  lightbox.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', function (e) {
+    touchEndX = e.changedTouches[0].screenX;
+    var diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) navigate(1);  // swipe left = next
+      else navigate(-1);          // swipe right = prev
+    }
+  }, { passive: true });
+
   // --- Form success feedback ---
   var form = document.querySelector('.booking__form');
   if (form) {

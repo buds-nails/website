@@ -787,6 +787,19 @@ ul {
    RESPONSIVE
    ======================================== */
 
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Mobile */
 @media (max-width: 767px) {
   .nav__toggle {
@@ -798,7 +811,7 @@ ul {
     top: var(--nav-height);
     left: 0;
     width: 100%;
-    background: var(--clr-cream);
+    background: var(--clr-white);
     flex-direction: column;
     align-items: center;
     gap: 0;
@@ -837,6 +850,11 @@ ul {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
+  /* Hero - fix parallax on iOS */
+  .hero {
+    background-attachment: scroll;
+  }
+
   .about__grid {
     grid-template-columns: 1fr;
     text-align: center;
@@ -855,6 +873,13 @@ ul {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Prevent iOS zoom on input focus */
+  .form__input,
+  .form__select,
+  .form__textarea {
+    font-size: 16px;
+  }
+
   .form__row {
     grid-template-columns: 1fr;
   }
@@ -862,6 +887,29 @@ ul {
   .contact__grid {
     grid-template-columns: 1fr;
   }
+
+  .contact__map iframe {
+    height: 250px;
+  }
+
+  /* Lightbox - larger touch targets on mobile */
+  .lightbox__close {
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    padding: 0.5rem;
+  }
+
+  .lightbox__prev,
+  .lightbox__next {
+    font-size: 2.5rem;
+    padding: 1.5rem 0.75rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius);
+  }
+
+  .lightbox__prev { left: 0.5rem; }
+  .lightbox__next { right: 0.5rem; }
 
   .footer__content {
     flex-direction: column;
@@ -873,6 +921,10 @@ ul {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
   }
 }
 
