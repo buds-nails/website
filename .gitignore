@@ -1,0 +1,11 @@
+# Planning & memory files (not part of the website)
+CLAUDE.md
+memory/
+vscode-prompt.md
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
