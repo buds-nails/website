@@ -166,14 +166,19 @@ ul {
 }
 
 .nav__logo {
-  font-family: var(--ff-accent);
-  font-size: 1.6rem;
-  color: var(--clr-mauve);
-  font-weight: 700;
+  display: flex;
+  align-items: center;
 }
 
-.nav__logo:hover {
-  color: var(--clr-gold);
+.nav__logo-img {
+  height: 55px;
+  width: auto;
+  border-radius: 50%;
+  transition: opacity var(--transition);
+}
+
+.nav__logo:hover .nav__logo-img {
+  opacity: 0.8;
 }
 
 .nav__menu {
@@ -694,10 +699,10 @@ ul {
   margin-bottom: 2rem;
 }
 
-.footer__logo {
-  font-family: var(--ff-accent);
-  font-size: 1.4rem;
-  color: var(--clr-white);
+.footer__logo-img {
+  height: 70px;
+  width: auto;
+  border-radius: 50%;
 }
 
 .footer__tagline {
