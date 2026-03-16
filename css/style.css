@@ -168,11 +168,21 @@ ul {
 .nav__logo {
   display: flex;
   align-items: center;
+  gap: 0.6rem;
+  font-family: var(--ff-accent);
+  font-size: 1.6rem;
+  color: var(--clr-mauve);
+  font-weight: 700;
+}
+
+.nav__logo:hover {
+  color: var(--clr-gold);
 }
 
 .nav__logo-img {
-  height: 55px;
-  width: auto;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
   border-radius: 50%;
   transition: opacity var(--transition);
 }
@@ -701,7 +711,8 @@ ul {
 
 .footer__logo-img {
   height: 70px;
-  width: auto;
+  width: 70px;
+  object-fit: cover;
   border-radius: 50%;
 }
 
