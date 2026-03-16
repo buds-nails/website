@@ -2,10 +2,30 @@
 CLAUDE.md
 memory/
 vscode-prompt.md
+
+# Dependencies
+node_modules/
+.npm
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
 # OS files
 .DS_Store
 Thumbs.db
 
-# Editor
+# Editor files
 .vscode/
+.idea/
 *.swp
+
+# Logs
+*.log
+npm-debug.log*
