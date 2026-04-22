@@ -6,7 +6,7 @@
   'use strict';
 
   var STORAGE_KEY = 'budsnails_consent';
-  var GA_MEASUREMENT_ID = ''; // e.g. 'G-XXXXXXXXXX' — set once GA4 property is created
+  var GA_MEASUREMENT_ID = 'G-QBSZ1NHZ32';
 
   function getConsent() {
     try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
