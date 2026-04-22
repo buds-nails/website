@@ -23,9 +23,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
 
+      # NOTE: bucket name is deliberately `budsnail.co.uk` (no 's') — that's
+      # how the bucket was originally created and is what CloudFront reads from.
+      # The public domain is `budsnails.co.uk` (with 's'). Do not "fix" this.
       - name: Sync website to S3
         run: |
-          aws s3 sync public/ s3://budsnails.co.uk/ \
+          aws s3 sync public/ s3://budsnail.co.uk/ \
             --delete \
             --exclude ".git/*" \
             --exclude ".github/*" \
@@ -36,11 +39,11 @@ jobs:
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --distribution-id E3CNIYS8ATC7LZ \
             --paths "/*"
 
       - name: Deployment summary
         run: |
-          echo "Website deployed to S3 bucket: budsnails.co.uk"
-          echo "CloudFront cache invalidated"
+          echo "Website deployed to S3 bucket: budsnail.co.uk (CF origin)"
+          echo "CloudFront distribution E3CNIYS8ATC7LZ cache invalidated"
           echo "Live at: https://www.budsnails.co.uk"
